@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>
+			HTML 시멘틱 구조 구성
+		</title>
+		<style>
+			html, body{margin:0;padding:0;height:100%}
+			header{width:100%;height:15%;background:yellow}
+			nav{width:15%;height:80%;float:left;background:orange}
+			section{width:70%;height:80%;float:left;background:olivedrab}
+			aside{width:15%;height:80%;float:left;background:orange}
+			footer{width:100%;height:15%;clear:both;background:plum}
+		</style>
+	</head>
+	<body>
+		<header>naver 로고<div>메뉴리스트</div>
+			<form name = "form" action="https://search.naver.com/search.naver" method = "get">
+				<input name = 'query' type='text'>
+				<input type = "submit" value="검색">
+			</form>
+			검색 버튼을 누르면 브라우저는 form태그의 action에 지정 된 주소를 참고해서, 해당 서버에 접속
+			후 search.naver 응용 프로그램의 실행을 요구
+			사용자가 입력 창 input에 텍스트 입력 후 검색 누르면, 브라우저는 웹 서버 응용 프로그램에 보낼
+			폼 데이터를 만든다. query=검색어
+			여기서 query는 입력창의 이름인 name속성에 지정된 값.
+			폼 데이터는 name=value 형태로 구성된다.
+			form태그의 method 속성이 get으로 설정되어 있고 get은 폼데이터를 action의  url에 덧붙인다.
+		</header>
+		<nav>nav<div><a href=""><img src="image/street.JPG" width="300" height=300"></a></div>자바스크립트</nav>
+
+		<section>
+			<mark>HTML5</mark><br>
+			<time>13:00</time><br>
+			<meter value="0.8" max = "1.0">80%</meter><br>
+			JS<progress value='3' max='10'>20%</progress><br>
+			CSS<progress value='6' max='10'>20%</progress><br>
+			HTML<progress value='8' max='10'>20%</progress><br>
+			PYTHON<progress value='10' max='10'>20%</progress><br>
+
+			input type 속성의 값 종류
+			1. text: 텍스트 입력 창
+			2. password: 비밀번호
+			3. button: 일반 버튼
+			4. submit: 웹 서버로 폼 데이터 전송하는 버튼
+			5. reset: 입력된 폼 데이터 초기화 버튼
+			6. image: 이미지 버튼
+			7. checkbox: 체크박스
+			8. radio: 라디오 버튼
+			9. month / week / date / time / datetime-local : 년 월 일 시간 등 시간 입력 창
+			10. number / range: 스핀 버튼과 슬라이드바로 숫자 입력 창
+			11. email / url / tel / search: 이메일, 주소, 전화번호, 검색키워드 등 형식 검사 기능 창
+			12. file: 로컬 컴퓨터 파일 선택 창
+
+			#input태그가 아닌 태그로 작성하는 입력 창 종류
+			textarea : 여러줄 텍스트 입력창
+			<textarea cols='20' rows='20'>
+			초기텍스트
+			</textarea>
+			cols, rows: 텍스트 입력창 크기 중 가로 세로 문자 수
+			wrap: 자동 줄바꿈 처리
+
+			2.datalist
+			<input type = 'text' list="cty">
+			<datalist id="cty">
+				<option value="111">
+				<option value="222">
+				<option value="333">
+			</datalist>
+
+
+			<input type = 'text' list="a">
+			<datalist id="a">
+				<option value="aaa">
+				<option value="bbb">
+				<option value="ccc">
+			</datalist>
+
+			<br>
+			<form>
+			1번선택지<input type="checkbox" value="1">
+			2번선택지<input type="checkbox" value="2" checked>
+			3번선택지<input type="checkbox" value="3">
+			</form>
+
+			<form>
+				라디오1번<input type="radio" name="r1" value='1'><br>
+				라디오2번<input type="radio" name="r1" value='2'><br>
+				라디오3번<input type="radio" name="r1" value='3'><br>
+				라디오4번<input type="radio" name="r1" value='4'><br>
+				<hr>
+				라디오5번<input type="radio" name="r2" value='5'><br>
+			</form>
+
+			<form>
+				<select name="sub">
+					<option value="1">1번 항목</option>
+					<option value="2" selected>2번 항목</option>
+					<option value="3">3번 항목</option>
+				</select>
+			</form>
+		
+			<label for="ID">
+				사용자 ID
+			</label>
+			<input type = "text" id="ID">
+			
+			<form name = "login">
+				<label>ID입력: <input type="text" size='10' value=''>
+				</label><br>
+				<label for="pass">비밀번호:</label>
+				<input id='pass' type='password' size='10' value=''>
+				<input type='submit' value="로그인">
+			</form>
+
+			<input type = "color" value="#00FF00" onchange="document.body.style.color=this.value">
+			<input type="file">
+
+		</section>
+		
+		<aside>
+			<form name = 'fo'>
+				ID<input type='text' value=''><br>
+				PW<input type='password' value=''><br>
+				<input type='submit' value="완료">
+			</form>
+			form태그는 다양한 속성을 가진다.
+			name속성: 폼의 이름 지정으로 자바스크림트와 결합하여 사용할 때 name으로 지칭, 식별자
+			action속성: 폼 데이터를 처리할 웹 서버 응용프로그램 지정
+			method속성: 폼 데이터를 웹 서버로 전송하는 형식 지정 GET or POST
+		</aside>
+		<footer>footer</footer>
+
+
+		
+	</body>
+</html>

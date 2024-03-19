@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <div class="container">container Div Section</div>
+    </body>
+    <style>
+        body{
+            color:chocolate;
+            margin:0;
+            padding:0;
+        }
+        .container{
+            width:80%;
+            background-color:rgb(203,151,82);
+            padding:20px;
+            margin:auto /*margin:auto속성은 요소의 상 하 좌 우 여백을 
+                        자동 조절하여 요소를 수평 중앙 배치하는 속성*/
+        }
+        @media (min-width: 768px) {
+            .container {
+                width: 70%;
+                background-color: blueviolet;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                width: 50%;
+                background-color: rgb(193, 164, 202);
+            }
+        }
+        @media (min-width: 1200px) {
+            .container {
+                width: 30%;
+                background-color: burlywood;
+            }
+        }
+    </style>
+</html>

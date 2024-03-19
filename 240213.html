@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+
+        <!-- #240213
+        #마우스 이벤트 핸들링
+        #마우스 이벤트는 프론트 개발에서 가장 많이 활용
+        #마우스 이벤트 객체의 프로퍼티
+        1. x, y : 타겟 객체의 부모 객체 내에서의 좌표
+        2. clientX, clientY : 브라우저 윈도우의 문서 출력 영역에서 좌표
+        3. screenX, screenY : 사용자 화면 기준 좌표
+        4. offsetX, offsetY : 타겟 객체 내에서의 좌표
+        5. button : 눌러진 마우스 버튼의 번호
+            -0 : 아무버튼도 눌리지 않음
+            -1 : 왼쪽 버튼이 눌림
+            -2 : 오른쪽 버튼이 눌림
+            -3 : 왼쪽, 오른쪽 눌림
+            -4 : 중간 버튼 눌림
+        6. wheelDelta : 마우스 휠 관련
+            양수 : 위쪽으로 휠 굴림 120
+            음수 : 아래로 휠 굴림 -120 -->
+
+    </pre>
+    <!-- <form>
+        식<input type="text" id="exp" value=""><br>
+        값<input type="text" id="result">
+        <input type="button" value="계산" onclick="cal(event)">
+    </form> -->
+
+
+
+
+
+
+    <!-- <h3>마우스 관련 이벤트 리스너</h3>
+    <hr>
+    <div>마우스 관련
+        <span
+            onmousedown = "down(this)"
+            onmouseup = "up(this)"
+            onmouseover = "over(this)"
+            onmouseout = "out(this)"
+            onwheel = "wheel(event, this)"
+            style="display: inline-block;"
+            >이벤트
+        </span>가 발생합니다.
+        
+
+
+
+
+
+
+    </div> -->
+    <!-- 이미지 위에 마우스를 움직일 때
+    onmousemove 리스너가 실행되고,
+    마우스의 위치를 보여줍니다. <br><br>
+    <img src="img/ss.jpg" onmousemove="where(event)"><br><br>
+    <div id="div"></div> -->
+
+    <!-- <h3>키 리스너와 키 이벤트 객체의 프로퍼티</h3>
+    <hr>
+    텍스트 창에 키를 눌러 보세요. Alt, Shift, Ctrl 키도 가능합니다. <br>
+    <input type="text" id="text" onkeydown="whatKeyDown(event)">
+    <div id="div" style="background-color: skyblue; width:250pxl; height: 50px;"></div>
+    -->
+
+
+    <style>
+         td { width: 50px; height: 50px; border: 1px solid orchid;}
+    </style>
+
+
+    <h3>화살표 키로 셀 위로 이동하기</h3>
+    <hr>
+    <table>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td></tr>
+    </table>
+
+
+
+    
+    <script>
+        // var exp=document.getElementById('exp');
+        // var result=document.getElementById('result');
+        // result.nextElementSibling.addEventListener("mouseover", cal);
+        // console.log(result.nextElementSibling);
+        // result.nextElementSibling.onclick=cal();
+        // result.nextElementSibling.removeEventListener('mouseover', cal);
+        // var exp2 = document.querySelector("#exp");
+        // document.write(exp2);
+        // function cal(e) 
+        // {
+        //     result.value = eval(exp.value);
+        //     document.write(e);
+        //     document.write(result.nextElementSibling);
+            
+        // }
+
+
+
+
+
+
+        // let width = 1; //테두리 두께
+        // function down(obj)
+        // {
+        //     obj.style.fontStyle = "italic";
+        // }
+        // function up(obj)
+        // {
+        //     obj.style.fontStyle = "normal";
+        // }
+        // function over(obj)
+        // {
+        //     obj.style.borderColor = "violet";
+        // }
+        // function out(obj)
+        // {
+        //     obj.style.borderColor = "lightgray";
+        // }
+        // function wheel(e, obj)  //e는 이벤트 객체
+        // {
+        //     if(e.wheelDelta < 0)  // 휠을 아래로 굴릴 때
+        //     {  
+        //         width--;  //폭이 1 감소
+        //         if(width < 0)
+        //         width = 0;  // 폭이 0보다 작아지지 않게
+        //     }
+        //     else  //휠을 위로 굴릴 때
+        //         width++;  //폭 1 증가
+        //     obj.style.borderStyle = "ridge";
+        //     obj.style.borderWidth = width + "px";
+        // }
+
+
+
+
+
+
+
+        // let div =document.getElementById("div");
+        // function where(e){
+        //     let text = "버튼=" + e.button + "<br>";
+        //     text += "(screenX, screenY)=" +
+        //         e.screenX + "," + e.screenY + "<br>";
+        //     text += "(clientX, clientY) = "+
+        //         e.clientX + "," + e.clientY + "<br>";
+        //     text += "(offsetX, offsetY)=" +
+        //         e.offsetX + "," + e.offsetY + "<br>";
+        //     text += "(x, y)= " + e.x + "," + e.y + "\n";
+        //     div.innerHTML = text;
+        // }
+
+        // function whatKeyDown(e)
+        // {
+        //     let str = " ";
+        //     let div = document.getElementById("div");
+        //     div.innerHTML = ""; //div 객체 내용 초기화
+        //     str += "e.key = " + e.key + "<br>";
+        //     str += "e.code = " + e.code + "<br>";
+        //     div.innerHTML = str; //div 객체에 html 문자열 출력
+        // }
+
+
+
+
+        let tds;
+        let prevIndex = 0, index = 0;
+        window.onload = function ()   //웹 페이지의 로딩 완료 시 실행
+        {
+            tds = document.getElementsByTagName("td");
+            tds[index].style.backgroundColor = "orchid";
+        }
+
+        window.onkeydown = function (e) {
+            switch (e.key) {
+                case "ArrowDown": 
+                    if(index/3 >= 2) return;  // 맨 위 셀의 경우
+                    index += 3;
+                    break;
+
+                case "ArrowUp":
+                    if(index/3 < 1) return; //맨 아래 셀의 경우
+                    index-= 3;
+                    break;
+
+                case "ArrowLeft":
+                    if(index%3 == 0) return;  //맨 왼쪽의 셀의 경우
+                    index--;
+                    break;
+
+                case "ArrowRight":
+                    if(index%3 == 2) return;  // 맨 오른쪽 셀의 경우
+                    index++;
+                    break;
+            }
+
+            tds [index].style.backgroundColor = "orchid";
+            tds [prevIndex].style.backgroundColor = "white";
+            prevIndex = index;
+
+        }
+       
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
